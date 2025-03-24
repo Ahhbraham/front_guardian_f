@@ -104,7 +104,7 @@ async function handleLogin() {
     })
 
     // Redirect after successful login
-    router.push('/')
+    router.push('/HomePage')
   } catch (err) {
     // Error is already handled by the auth service
     console.error('Login failed', err)

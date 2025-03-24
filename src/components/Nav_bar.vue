@@ -8,6 +8,7 @@
       <v-btn to="/LoginPage" color="#000C66" variant="text">Login</v-btn>
       <v-btn to="/RegisterPage" color="#000C66" variant="text">Join us</v-btn>
       <v-btn to="/RolePage" color="#000C66" variant="text">RolePage</v-btn>
+      <v-btn to="/HomePage" color="#000C66" variant="text">Back to home</v-btn>
     </div>
   </v-app-bar>
 </template>
