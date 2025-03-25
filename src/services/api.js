@@ -3,7 +3,8 @@ import router from '../router/index';
 import TokenService from './token.service';
 // import axios from above
 const instance = axios.create({
-    baseURL: "http://localhost:8000/api/",
+    baseURL: "https://backend-guardian.onrender.com",
+   
     headers: {
         "Content-Type": "application/json",
     },
@@ -40,3 +41,5 @@ instance.interceptors.response.use(
 
 
   export default instance;
+
+
