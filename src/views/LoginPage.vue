@@ -144,7 +144,24 @@ onMounted(() => {
 })
 </script>
 
+
+
+
+
+
+
+
 <style scoped>
+.login-container.show-password{
+  --bgColor: #F5F5F5;
+  --inputColor: black;
+  --outlineColor: #262C26;
+  --beamColor: #9b9b9b;
+  --spacer: 1rem;
+}
+
+
+
 /* Center the form */
 .login-container {
   display: flex;
@@ -174,7 +191,7 @@ onMounted(() => {
 
 .login-container.show-password .input-icon,
 .login-container.show-password #eyeball {
-  color: white; /* Light icons for dark mode */
+  color: rgb(0, 0, 0); /* Dark icons for dark mode */
 }
 
 /* Form styling */

@@ -1,76 +1,300 @@
 <template>
-  <div>
-    <header>
-      <h1>SafeZone</h1>
-      <nav>
-        <ul>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#download" class="cta">Download</a></li>
-        </ul>
-      </nav>
-    </header>
-    
-    <section id="hero">
-      <h2>Stay Safe, Stay Connected</h2>
-      <p>Real-time safety updates, emergency contacts, and first aid guidance at your fingertips.</p>
-      <router-link to="/LoginPage" class="cta">Get Started</router-link>
-    </section>
-    
-    <section id="features">
-      <h2>Key Features</h2>
-      <ul>
-        <li>🔔 Zonal Safety Updates</li>
-        <li>📞 One-Tap Police Hotline</li>
-        <li>🎥 Voice & Video Assistance</li>
-        <li>📍 Live Location Sharing</li>
-        <li>✅ Trusted Circles for Safety</li>
-        <li>🏥 Instant First Aid Guidance</li>
-      </ul>
-    </section>
-    
-    <section id="about">
-      <h2>About SafeZone</h2>
-      <p>SafeZone is designed to provide real-time situational help, emergency assistance, and safety tools for individuals and communities.</p>
-    </section>
-    
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: support@safezone.com</p>
-      <p>Phone: +123 456 7890</p>
-    </section>
-    
-    <footer>
-      <p>&copy; 2025 SafeZone. All rights reserved.</p>
-    </footer>
+  <div class="container">
+    <img src="../assets/header.png" alt="header" />
+    <!-- Image that pops up -->
+    <h4 class="text__left">GUAR</h4>
+    <h4 class="text__right">DIAN</h4>
+
+    <button class="btn explore" @click="redirectToRegister">REGISTER</button>
+
+    <h5 class="feature-1">Secure</h5>
+    <h5 class="feature-2">Safeguard</h5>
+    <h5 class="feature-3">Alert</h5>
+    <h5 class="feature-4">Protect</h5>
   </div>
 </template>
 
 <script>
+import ScrollReveal from "scrollreveal";
+
 export default {
-  name: 'HomePage'
-}
+  name: "GuardianIntro",
+  methods: {
+    redirectToRegister() {
+      // Use Vue Router to navigate to RegisterPage
+      this.$router.push("/RegisterPage");
+    },
+  },
+  mounted() {
+    const scrollRevealOption = {
+      distance: "50px",
+      origin: "bottom",
+      duration: 1000,
+    };
+
+    ScrollReveal().reveal(".container img", {
+      duration: 1000,
+      delay: 1200,
+    });
+    
+    ScrollReveal().reveal(".container .text__left", {
+      ...scrollRevealOption,
+      origin: "right",
+      delay: 2000,
+    });
+    
+    ScrollReveal().reveal(".container .text__right", {
+      ...scrollRevealOption,
+      origin: "left",
+      delay: 2000,
+    });
+    
+    ScrollReveal().reveal(".container .explore", {
+      duration: 1000,
+      delay: 2500,
+    });
+    
+    ScrollReveal().reveal(".container h5", {
+      duration: 1200,
+      interval: 300,
+      delay: 3000,
+    });
+  },
+};
 </script>
 
+
+
 <style scoped>
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background: #2c3e50;
-  color: white;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+
+:root {
+  --primary-color: #E2E2F3 ;
+  --text-dark: #232637;
+  --white: #ffffff;
+  --max-width: 1200px;
 }
-nav ul {
-  list-style: none;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  position: absolute;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #dbdce0;
+}
+
+body::after {
+  position: fixed;
+  content: "";
+  height: 100%;
+  width: 0;
+  top: 0;
+  right: 0;
+  background-color: var(--text-dark);
+  z-index: -1;
+
+  animation: body-bg 1s ease-in-out forwards;
+}
+
+@keyframes body-bg {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 50vw;
+  }
+}
+
+body::before {
+  position: fixed;
+  content: "0";
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  font-size: 70rem;
+  font-weight: 200;
+  color: var(--white);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.container {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+nav {
+  padding-block: 2rem 0;
+  padding-inline: 1rem;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
 }
-.cta {
-  background: #e74c3c;
-  color: white;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  border-radius: 5px;
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__links a {
+  font-weight: 500;
+}
+
+.nav__links .logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.nav__left a {
+  color: var(--text-dark);
+}
+
+.nav__right a {
+  color: var(--white);
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.letter-s {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40rem;
+  line-height: 40rem;
+  font-weight: 900;
+  color: var(--primary-color);
+}
+
+.container img {
+  position: absolute;
+  width: 100%;
+  max-width: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 50px rgba(0, 0, 0, 0.8));
+}
+
+.container h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  color: var(--white);
+  letter-spacing: 25px;
+}
+
+.text__left {
+  transform: translate(calc(-50% - 250px), -50%);
+}
+
+.text__right {
+  transform: translate(calc(-50% + 250px), -50%);
+}
+
+.container .explore {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 225px));
+  color: var(--text-dark);
+  background-color: var(--white);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.container .print {
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%) rotate(90deg);
+  padding: calc(1rem - 4px) calc(2rem - 4px);
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--white);
+}
+
+.container .catalog {
+  top: 25%;
+  left: 0;
+  transform: translate(0, -50%) rotate(-90deg);
+  padding: calc(1rem - 4px) calc(2rem - 4px);
+  color: var(--text-dark);
+  background-color: transparent;
+  border: 1px solid var(--text-dark);
+}
+
+.container h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.container h5::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100px;
+  top: 50%;
+}
+
+.feature-1 {
+  color: var(--text-dark);
+  transform: translate(calc(-50% - 300px), calc(-50% - 200px));
+}
+
+.feature-2 {
+  color: var(--white);
+  transform: translate(calc(-50% + 300px), calc(-50% - 200px));
+}
+
+.feature-3 {
+  color: var(--text-dark);
+  transform: translate(calc(-50% - 300px), calc(-50% + 200px));
+}
+
+.feature-4 {
+  color: var(--white);
+  transform: translate(calc(-50% + 300px), calc(-50% + 200px));
+}
+
+.feature-1::after,
+.feature-3::after {
+  right: 0;
+  transform: translate(calc(100% + 40px), -50%);
+  background-color: var(--text-dark);
+}
+
+.feature-2::after,
+.feature-4::after {
+  left: 0;
+  transform: translate(calc(-100% - 40px), -50%);
+  background-color: var(--white);
 }
 </style>
