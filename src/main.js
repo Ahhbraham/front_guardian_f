@@ -3,8 +3,12 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+
+
 //axios
-import axios from 'axios';
+
+//import axios app,maybe scroll reveal too
+
 
 // Vuetify
 import 'vuetify/styles'
@@ -19,11 +23,9 @@ import '@mdi/font/css/materialdesignicons.css'
 
 
 
-
 const vuetify = createVuetify({ components, directives })
 const app = createApp(App)
-//axios
-app.config.globalProperties.$axios = axios;
+
 
 
 app.use(createPinia())

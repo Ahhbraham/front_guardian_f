@@ -2,6 +2,8 @@
 import { RouterView } from 'vue-router';
 import Nav_bar from './components/Nav_bar.vue';
 
+
+
 </script>
 
 <template>
@@ -14,9 +16,5 @@ import Nav_bar from './components/Nav_bar.vue';
 </template>
 
 <style>
-.main-content {
-  padding-top: 20px;
-  min-height: 90vh;
-  flex-grow: 1;
-}
+ 
 </style>

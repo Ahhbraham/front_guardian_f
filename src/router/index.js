@@ -21,7 +21,7 @@ const router = createRouter({
       path:'/',
       name:'LandingPage',
       component: LandingPage,
-      meta: { hideNavbar: true } //Hides the navbar in Landing
+      // meta: { hideNavbar: true } //Hides the navbar in Landing
     
     },
 

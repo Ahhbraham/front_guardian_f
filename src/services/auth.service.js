@@ -3,7 +3,6 @@ import { ref, computed } from 'vue'
 import TokenService from './token.service'
 import api from './api'
 
-
 // Create reactive state
 const user = ref(null)
 const loading = ref(false)

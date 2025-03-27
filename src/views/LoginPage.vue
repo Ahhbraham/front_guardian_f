@@ -3,7 +3,7 @@
     
     <form @submit.prevent="handleLogin" class="login-form">
 
-      <!-- USERNAME FIELD -->
+      <!-- Email FIELD -->
       <div class="form-item">
         <div class="input-wrapper">
           <input
@@ -15,7 +15,7 @@
             autocapitalize="off"
             spellcheck="false"
             data-lpignore="true"
-            placeholder="Username"
+            placeholder="Email"
           />
          
           <i class="mdi mdi-account-outline input-icon"></i> <!-- MDI Icon -->
