@@ -9,7 +9,7 @@
           <input
           v-model="email"
             type="text"
-            id="username"
+            id="email"
             autocomplete="off"
             autocorrect="off"
             autocapitalize="off"
